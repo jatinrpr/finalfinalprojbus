@@ -1,0 +1,29 @@
+# ── Render.com Deployment Config ──────────────────────────────────
+# Put this file in the ROOT of your project (next to package.json)
+# Then connect your GitHub repo on render.com → New Web Service
+
+services:
+  - type: web
+    name: smart-bus-tracking
+    env: node
+    plan: free                    # free tier — upgrade for production
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      # ⚠️  Set these manually in Render dashboard → Environment tab
+      - key: MONGO_URI
+        sync: false               # paste your MongoDB Atlas URI here
+
+      - key: JWT_SECRET
+        generateValue: true       # auto-generated secure random string
+
+      - key: DRIVER_PASS
+        sync: false               # set your own driver password
+
+      - key: FIREBASE_KEY
+        sync: false               # base64-encoded Firebase service account JSON

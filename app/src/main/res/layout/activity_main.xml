@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A">
+
+    <!-- 🚍 Bus Icon -->
+    <ImageView
+        android:id="@+id/busImage"
+        android:src="@android:drawable/ic_menu_compass"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:text="Bus Tracker"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- 🎓 Student Button -->
+    <Button
+        android:id="@+id/studentBtn"
+        android:text="I'm a Student"
+        android:alpha="0"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/busImage"
+        android:layout_marginTop="100dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+
+    <!-- 🚌 Driver Button -->
+    <Button
+        android:id="@+id/driverBtn"
+        android:text="I'm a Driver"
+        android:alpha="0"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/studentBtn"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnCalendar"
+        android:text="📄 Bus Calendar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/driverBtn"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

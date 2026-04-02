@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#0F172A"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 🚌 TITLE -->
+    <TextView
+        android:id="@+id/title"
+        android:text="Smart Bus Tracker"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- 👤 WELCOME -->
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_below="@id/title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"/>
+
+    <!-- 🚪 LOGOUT -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/title"
+        android:layout_marginTop="5dp"/>
+
+    <!-- 📅 DAY DROPDOWN -->
+    <Spinner
+        android:id="@+id/daySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcome"
+        android:layout_margin="10dp"
+        android:background="#FFFFFF"/>
+
+    <!-- 🚌 BUS LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/busRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/daySpinner"
+        android:layout_margin="10dp"
+        android:background="#1E293B"/>
+
+    <!-- 🗺️ MAP -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/busRecycler"/>
+
+
+</RelativeLayout>

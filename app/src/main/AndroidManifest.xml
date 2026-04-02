@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.finalfinalproj">
+    <!-- ✅ Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:label="Bus Tracker"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY_HERE" /> <!-- 🚍 DRIVER -->
+        <activity android:name=".DriverLoginActivity" />
+        <activity android:name=".DriverActivity" /> <!-- 👨‍🎓 STUDENT -->
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".BusListActivity" /> <!-- 🔐 AUTH -->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignupActivity" /> <!-- 🗺️ MAP -->
+        <activity android:name=".MapActivity" /> <!-- 🏠 HOME -->
+        <activity android:name=".HomeActivity" /> <!-- 🚀 MAIN -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

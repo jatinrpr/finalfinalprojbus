@@ -1,0 +1,38 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#0F172A"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TITLE -->
+    <TextView
+        android:text="Driver Login"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- PASSWORD ONLY -->
+    <EditText
+        android:id="@+id/password"
+        android:hint="Enter Driver Password"
+        android:inputType="textPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:background="#FFFFFF"/>
+
+    <!-- LOGIN BUTTON -->
+    <Button
+        android:id="@+id/loginBtn"
+        android:text="Login"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/password"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>
