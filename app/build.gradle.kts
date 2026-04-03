@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
-}
 
+    // 🔥 ADD THIS
+    id("com.google.gms.google-services")
+}
 android {
     namespace = "com.example.finalfinalproj"
     compileSdk {
@@ -45,6 +47,14 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+
+    // 🔥 Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-messaging")
+
+    // 🔥 ADD THIS (Socket.IO)
+    implementation("io.socket:socket.io-client:2.1.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

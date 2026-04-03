@@ -12,13 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".MyFirebaseMessagingService"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY_HERE" /> <!-- 🚍 DRIVER -->
+            android:value="AIzaSyDM2HYUE-4vcGPA3xUoK67f0IaHs-hqyF4"/>
         <activity android:name=".DriverLoginActivity" />
         <activity android:name=".DriverActivity" /> <!-- 👨‍🎓 STUDENT -->
         <activity android:name=".StudentActivity" />

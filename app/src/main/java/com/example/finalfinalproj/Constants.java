@@ -11,8 +11,8 @@ package com.example.finalfinalproj;
 public class Constants {
 
     // ── 🔥 CHANGE THIS ONE LINE ONLY ───────────────────────────────
-    public static final String BASE_URL    = "https://YOUR-APP.onrender.com";
-    public static final String SOCKET_URL  = "https://YOUR-APP.onrender.com";
+    public static final String BASE_URL    = "https://finalfinalprojbus.onrender.com";
+    public static final String SOCKET_URL  = "https://finalfinalprojbus.onrender.com";
     // ───────────────────────────────────────────────────────────────
 
     // SharedPreferences keys

@@ -2,24 +2,126 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#0D1B3E">
 
+    <!-- ── Header ─────────────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1A237E"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:backgroundTint="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/tvBusTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bus"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <View android:layout_width="72dp" android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+    <!-- ── Stops dropdown ─────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#283593"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍  Select Stop for ETA"
+            android:textColor="#90CAF9"
+            android:textSize="11sp"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/stopSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/spinner_bg"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:popupBackground="#1A237E"/>
+
+    </LinearLayout>
+
+    <!-- ── Map — fills most of screen ────────────────────────── -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 
-    <TextView
-        android:id="@+id/tvEta"
+    <!-- ── ETA bar (shown when bus is tracking) ──────────────── -->
+    <LinearLayout
+        android:id="@+id/layoutTracking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1565C0"
         android:padding="12dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:gravity="center"
-        android:background="#E3F2FD"
-        android:text="Fetching ETA..." />
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvEta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔄 Calculating ETA..."
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- ── Not sharing panel ──────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/layoutNotSharing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E65100"
+        android:padding="16dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvNotSharingMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Bus location not being shared yet."
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.4"/>
+
+    </LinearLayout>
 
 </LinearLayout>
