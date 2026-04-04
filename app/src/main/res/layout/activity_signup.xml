@@ -29,9 +29,8 @@
             android:textSize="14sp"
             android:layout_marginBottom="32dp"/>
 
-        <!-- ══ STEP 1: Sign Up Details ══════════════════════════ -->
+        <!-- SIGNUP FORM -->
         <LinearLayout
-            android:id="@+id/layoutStep1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -45,6 +44,7 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"/>
 
+            <!-- Name -->
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
@@ -52,25 +52,27 @@
                 android:hint="Full Name"
                 android:textColorHint="#90CAF9"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/input_bg"
+
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:inputType="textPersonName"
                 android:layout_marginBottom="12dp"/>
 
+            <!-- Email -->
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:hint="Gmail Address (e.g. name@gmail.com)"
+                android:hint="Email Address"
                 android:textColorHint="#90CAF9"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/input_bg"
+
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:inputType="textEmailAddress"
                 android:layout_marginBottom="12dp"/>
 
+            <!-- Password -->
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -78,12 +80,13 @@
                 android:hint="Password (min 6 characters)"
                 android:textColorHint="#90CAF9"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/input_bg"
+
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:inputType="textPassword"
                 android:layout_marginBottom="12dp"/>
 
+            <!-- Confirm Password -->
             <EditText
                 android:id="@+id/confirmPassword"
                 android:layout_width="match_parent"
@@ -91,87 +94,22 @@
                 android:hint="Confirm Password"
                 android:textColorHint="#90CAF9"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/input_bg"
+
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:inputType="textPassword"
                 android:layout_marginBottom="20dp"/>
 
+            <!-- Signup Button -->
             <Button
                 android:id="@+id/signupBtn"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:text="Send OTP to Gmail 📧"
+                android:text="Create Account 🚀"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:backgroundTint="#1565C0"/>
-
-        </LinearLayout>
-
-        <!-- ══ STEP 2: OTP Verification ═════════════════════════ -->
-        <LinearLayout
-            android:id="@+id/layoutStep2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Verify Your Gmail"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:id="@+id/tvOtpSentTo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="OTP sent to your Gmail"
-                android:textColor="#90CAF9"
-                android:textSize="13sp"
-                android:lineSpacingMultiplier="1.4"
-                android:layout_marginBottom="20dp"/>
-
-            <EditText
-                android:id="@+id/etOtp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="Enter 6-digit OTP"
-                android:textColorHint="#90CAF9"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/input_bg"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:inputType="number"
-                android:maxLength="6"
-                android:textSize="22sp"
-                android:gravity="center"
-                android:letterSpacing="0.3"
-                android:layout_marginBottom="16dp"/>
-
-            <Button
-                android:id="@+id/btnVerifyOtp"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Verify OTP ✅"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:backgroundTint="#2E7D32"
-                android:layout_marginBottom="12dp"/>
-
-            <Button
-                android:id="@+id/btnResendOtp"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:text="Resend OTP"
-                android:textColor="#90CAF9"
-                android:textSize="13sp"
-                android:backgroundTint="@android:color/transparent"/>
 
         </LinearLayout>
 
