@@ -4,9 +4,10 @@
 
 services:
   - type: web
-    name: smart-bus-tracking
+    name: finalfinalprojbus
     env: node
-    plan: free                    # free tier — upgrade for production
+    plan: free
+    rootDir: app/backend
     buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /health
@@ -14,16 +15,13 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-
-      # ⚠️  Set these manually in Render dashboard → Environment tab
       - key: MONGO_URI
-        sync: false               # paste your MongoDB Atlas URI here
-
+        sync: false
       - key: JWT_SECRET
-        generateValue: true       # auto-generated secure random string
-
+        sync: false
       - key: DRIVER_PASS
-        sync: false               # set your own driver password
-
-      - key: FIREBASE_KEY
-        sync: false               # base64-encoded Firebase service account JSON
+        sync: false
+      - key: MAIL_USER
+        sync: false
+      - key: MAIL_PASS
+        sync: false
