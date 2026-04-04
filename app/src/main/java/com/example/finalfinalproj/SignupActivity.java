@@ -4,15 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.json.JSONObject;
 
 public class SignupActivity extends AppCompatActivity {
 
-    EditText    name, email, password, confirmPassword;
-    Button      signupBtn;
+    EditText    etName, etEmail, etPassword, etConfirm;
+    Button      btnSignup;
     ProgressBar progressBar;
 
     @Override
@@ -20,54 +18,46 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        name            = findViewById(R.id.name);
-        email           = findViewById(R.id.email);
-        password        = findViewById(R.id.password);
-        confirmPassword = findViewById(R.id.confirmPassword);
-        signupBtn       = findViewById(R.id.signupBtn);
-        progressBar     = findViewById(R.id.progressBar);
+        etName      = findViewById(R.id.name);
+        etEmail     = findViewById(R.id.email);
+        etPassword  = findViewById(R.id.password);
+        etConfirm   = findViewById(R.id.confirmPassword);
+        btnSignup   = findViewById(R.id.signupBtn);
+        progressBar = findViewById(R.id.progressBar);
 
-        signupBtn.setOnClickListener(v -> attemptSignup());
+        btnSignup.setOnClickListener(v -> attemptSignup());
     }
 
     private void attemptSignup() {
-        String userName    = name.getText().toString().trim();
-        String userEmail   = email.getText().toString().trim().toLowerCase();
-        String userPass    = password.getText().toString().trim();
-        String userConfirm = confirmPassword.getText().toString().trim();
+        String name    = etName.getText().toString().trim();
+        String email   = etEmail.getText().toString().trim().toLowerCase();
+        String pass    = etPassword.getText().toString().trim();
+        String confirm = etConfirm.getText().toString().trim();
 
-        // ── Validation ────────────────────────────────────────────
-        if (userName.isEmpty() || userEmail.isEmpty() ||
-                userPass.isEmpty() || userConfirm.isEmpty()) {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+        // ── Validations ───────────────────────────────────────────
+        if (name.isEmpty()) {
+            etName.setError("Enter your name");
+            etName.requestFocus();
             return;
         }
-
-        // ✅ Gmail only check
-        if (!userEmail.endsWith("@gmail.com")) {
-            email.setError("Only Gmail addresses are allowed (e.g. name@gmail.com)");
-            email.requestFocus();
+        if (email.isEmpty()) {
+            etEmail.setError("Enter your Gmail");
+            etEmail.requestFocus();
             return;
         }
-
-        // ✅ Basic email format check
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
-            email.setError("Enter a valid Gmail address");
-            email.requestFocus();
+        if (!email.endsWith("@gmail.com")) {
+            etEmail.setError("Only Gmail allowed (e.g. name@gmail.com)");
+            etEmail.requestFocus();
             return;
         }
-
-        // ✅ Password length
-        if (userPass.length() < 6) {
-            password.setError("Password must be at least 6 characters");
-            password.requestFocus();
+        if (pass.isEmpty() || pass.length() < 6) {
+            etPassword.setError("Password must be at least 6 characters");
+            etPassword.requestFocus();
             return;
         }
-
-        // ✅ Password match
-        if (!userPass.equals(userConfirm)) {
-            confirmPassword.setError("Passwords do not match ❌");
-            confirmPassword.requestFocus();
+        if (!pass.equals(confirm)) {
+            etConfirm.setError("Passwords do not match");
+            etConfirm.requestFocus();
             return;
         }
 
@@ -76,9 +66,9 @@ public class SignupActivity extends AppCompatActivity {
         new Thread(() -> {
             try {
                 JSONObject body = new JSONObject();
-                body.put("name",     userName);
-                body.put("email",    userEmail);
-                body.put("password", userPass);
+                body.put("name",     name);
+                body.put("email",    email);
+                body.put("password", pass);
 
                 ApiClient.post(this, "/signup", body, new ApiClient.Callback() {
                     @Override
@@ -86,7 +76,8 @@ public class SignupActivity extends AppCompatActivity {
                         runOnUiThread(() -> {
                             setLoading(false);
                             Toast.makeText(SignupActivity.this,
-                                    "Signup Successful ✅", Toast.LENGTH_SHORT).show();
+                                    "Account created successfully ✅",
+                                    Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                             finish();
                         });
@@ -96,10 +87,9 @@ public class SignupActivity extends AppCompatActivity {
                     public void onError(String message) {
                         runOnUiThread(() -> {
                             setLoading(false);
-                            // Show specific error under email field if duplicate
                             if (message.contains("already registered")) {
-                                email.setError("This Gmail is already registered");
-                                email.requestFocus();
+                                etEmail.setError("This Gmail is already registered");
+                                etEmail.requestFocus();
                             } else {
                                 Toast.makeText(SignupActivity.this,
                                         "Signup Failed: " + message,
@@ -108,6 +98,7 @@ public class SignupActivity extends AppCompatActivity {
                         });
                     }
                 });
+
             } catch (Exception e) {
                 runOnUiThread(() -> {
                     setLoading(false);
@@ -118,7 +109,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void setLoading(boolean loading) {
-        signupBtn.setEnabled(!loading);
+        btnSignup.setEnabled(!loading);
         if (progressBar != null)
             progressBar.setVisibility(loading ? View.VISIBLE : View.GONE);
     }

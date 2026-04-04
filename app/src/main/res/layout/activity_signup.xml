@@ -19,7 +19,7 @@
             android:textColor="#FFFFFF"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="40dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,91 +27,83 @@
             android:text="IIT Ropar"
             android:textColor="#90CAF9"
             android:textSize="14sp"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="36dp"/>
 
-        <!-- SIGNUP FORM -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Create Account"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create Account"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp"/>
+        <!-- Name -->
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Full Name"
+            android:textColorHint="#90CAF9"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/input_bg"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="14dp"/>
 
-            <!-- Name -->
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:hint="Full Name"
-                android:textColorHint="#90CAF9"
-                android:textColor="#FFFFFF"
+        <!-- Gmail -->
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Gmail (e.g. name@gmail.com)"
+            android:textColorHint="#90CAF9"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/input_bg"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="14dp"/>
 
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="12dp"/>
+        <!-- Password -->
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Password (min 6 characters)"
+            android:textColorHint="#90CAF9"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/input_bg"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textPassword"
+            android:layout_marginBottom="14dp"/>
 
-            <!-- Email -->
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:hint="Email Address"
-                android:textColorHint="#90CAF9"
-                android:textColor="#FFFFFF"
+        <!-- Confirm Password -->
+        <EditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Confirm Password"
+            android:textColorHint="#90CAF9"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/input_bg"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textPassword"
+            android:layout_marginBottom="24dp"/>
 
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:inputType="textEmailAddress"
-                android:layout_marginBottom="12dp"/>
-
-            <!-- Password -->
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:hint="Password (min 6 characters)"
-                android:textColorHint="#90CAF9"
-                android:textColor="#FFFFFF"
-
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:inputType="textPassword"
-                android:layout_marginBottom="12dp"/>
-
-            <!-- Confirm Password -->
-            <EditText
-                android:id="@+id/confirmPassword"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:hint="Confirm Password"
-                android:textColorHint="#90CAF9"
-                android:textColor="#FFFFFF"
-
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:inputType="textPassword"
-                android:layout_marginBottom="20dp"/>
-
-            <!-- Signup Button -->
-            <Button
-                android:id="@+id/signupBtn"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Create Account 🚀"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:backgroundTint="#1565C0"/>
-
-        </LinearLayout>
+        <!-- Signup Button -->
+        <Button
+            android:id="@+id/signupBtn"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Create Account"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#1565C0"/>
 
         <!-- Loading -->
         <ProgressBar
