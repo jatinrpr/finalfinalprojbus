@@ -3,15 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#080E1C">
+    android:background="#0F0F0F">
 
-    <!-- ── Header ────────────────────────────────────────────── -->
+    <!-- ── Header ─────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/header_bg"
-        android:paddingStart="8dp"
+        android:paddingStart="4dp"
         android:paddingEnd="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
@@ -22,12 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="← Back"
-            android:textColor="#94A3B8"
+            android:textColor="#71717A"
             android:textSize="13sp"
             android:background="@android:color/transparent"
             android:stateListAnimator="@null"
             android:elevation="0dp"
-            android:paddingStart="12dp"
+            android:paddingStart="16dp"
             android:paddingEnd="8dp"/>
 
         <TextView
@@ -36,23 +36,24 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Bus"
-            android:textColor="#F1F5F9"
+            android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:textStyle="bold"
             android:gravity="center"
             android:maxLines="1"
             android:ellipsize="end"/>
 
+        <!-- Spacer to balance back button -->
         <View android:layout_width="72dp" android:layout_height="1dp"/>
 
     </LinearLayout>
 
-    <!-- ── Stops Selector ────────────────────────────────────── -->
+    <!-- ── Stops selector ────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#0A1220"
+        android:background="#18181B"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingTop="10dp"
@@ -62,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="📍  Select Stop for ETA"
-            android:textColor="#64748B"
+            android:textColor="#71717A"
             android:textSize="11sp"
             android:letterSpacing="0.08"
             android:layout_marginBottom="6dp"/>
@@ -74,11 +75,17 @@
             android:background="@drawable/spinner_bg"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:popupBackground="#0D1B33"/>
+            android:popupBackground="#18181B"/>
 
     </LinearLayout>
 
-    <!-- ── Map ───────────────────────────────────────────────── -->
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/divider_bg"/>
+
+    <!-- ── Map fills remaining space ─────────────────────────── -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -86,7 +93,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <!-- ── ETA Bar (active tracking) ─────────────────────────── -->
+    <!-- ── ETA Bar — shown when bus IS sharing ────────────────── -->
     <LinearLayout
         android:id="@+id/layoutTracking"
         android:layout_width="match_parent"
@@ -104,15 +111,15 @@
             android:id="@+id/tvEta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🔄 Calculating ETA..."
-            android:textColor="#F1F5F9"
+            android:text="🔄  Calculating ETA..."
+            android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold"
             android:gravity="center"/>
 
     </LinearLayout>
 
-    <!-- ── Not Sharing Panel ──────────────────────────────────── -->
+    <!-- ── Not Sharing Panel — shown when bus NOT sharing ───────── -->
     <LinearLayout
         android:id="@+id/layoutNotSharing"
         android:layout_width="match_parent"
@@ -121,8 +128,8 @@
         android:background="@drawable/not_sharing_bg"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
         android:gravity="center"
         android:visibility="gone">
 
@@ -130,7 +137,7 @@
             android:id="@+id/tvNotSharingMsg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📍 Location not being shared yet"
+            android:text="📍  Location not being shared yet"
             android:textColor="#FCD34D"
             android:textSize="13sp"
             android:gravity="center"
