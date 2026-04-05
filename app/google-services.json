@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "505220756268",
+    "firebase_url": "https://smart-bus-c3ecd-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-bus-c3ecd",
+    "storage_bucket": "smart-bus-c3ecd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505220756268:android:6973ec89c34efe4f2eb289",
+        "android_client_info": {
+          "package_name": "com.example.finalfinalproj"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIuhPx-0oqHJ2c28M5qP5hFi6iKZzPe5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,38 +1,123 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#0F172A"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#080E1C">
 
-    <!-- TITLE -->
+    <!-- Top glow accent -->
+    <View
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-80dp"
+        android:background="@drawable/glow_circle"
+        android:alpha="0.15"/>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="60dp">
+
+        <!-- Icon -->
+        <TextView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:text="🚌"
+            android:textSize="36sp"
+            android:gravity="center"
+            android:background="@drawable/circle_blue"
+            android:layout_gravity="center"
+            android:layout_marginBottom="28dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driver Portal"
+            android:textColor="#F1F5F9"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your driver password to continue"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="48dp"/>
+
+        <!-- Security icon hint -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒  Password"
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Enter driver password"
+            android:textColorHint="#334155"
+            android:textColor="#F1F5F9"
+            android:textSize="16sp"
+            android:background="@drawable/input_bg"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:inputType="textPassword"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Loading -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Access Driver Panel"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_primary"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"/>
+
+    </LinearLayout>
+
+    <!-- Bottom badge -->
     <TextView
-        android:text="Driver Login"
-        android:textSize="24sp"
-        android:textColor="#FFFFFF"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <!-- PASSWORD ONLY -->
-    <EditText
-        android:id="@+id/password"
-        android:hint="Enter Driver Password"
-        android:inputType="textPassword"
-        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:text="🛡️  Authorized Personnel Only"
+        android:textColor="#334155"
+        android:textSize="12sp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
-        android:background="#FFFFFF"/>
-
-    <!-- LOGIN BUTTON -->
-    <Button
-        android:id="@+id/loginBtn"
-        android:text="Login"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/password"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginBottom="32dp"/>
 
 </RelativeLayout>

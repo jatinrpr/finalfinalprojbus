@@ -3,15 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0D1B3E">
+    android:background="#080E1C">
 
     <!-- ── Header ─────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#1A237E"
-        android:padding="14dp"
+        android:background="@drawable/header_bg"
+        android:paddingStart="20dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -23,9 +26,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🚌 Smart Bus Tracker"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:text="🚌  Smart Bus Tracker"
+                android:textColor="#F1F5F9"
+                android:textSize="17sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -33,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Welcome 👋"
-                android:textColor="#90CAF9"
+                android:textColor="#0EA5E9"
                 android:textSize="13sp"
                 android:layout_marginTop="2dp"/>
 
@@ -41,76 +44,78 @@
 
         <Button
             android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
             android:text="Logout"
             android:textSize="12sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#C62828"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"/>
+            android:textColor="#F1F5F9"
+            android:background="@drawable/btn_danger"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"/>
 
     </LinearLayout>
 
-    <!-- ── Day Selector ───────────────────────────────────────── -->
+    <!-- ── Day selector ───────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#283593"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp">
+        android:background="#0A1220"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="📅  Select Day"
-            android:textColor="#90CAF9"
-            android:textSize="12sp"
-            android:layout_marginBottom="4dp"/>
+            android:textColor="#64748B"
+            android:textSize="11sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"/>
 
         <Spinner
             android:id="@+id/daySpinner"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="46dp"
             android:background="@drawable/spinner_bg"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:popupBackground="#1A237E"/>
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:popupBackground="#0D1B33"/>
 
     </LinearLayout>
 
-    <!-- ── Loading spinner ────────────────────────────────────── -->
+    <!-- ── Loading / Empty ────────────────────────────────────── -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:visibility="gone"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="32dp"/>
 
-    <!-- ── Empty / error message ──────────────────────────────── -->
     <TextView
         android:id="@+id/tvEmpty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="No buses found"
-        android:textColor="#90CAF9"
+        android:textColor="#334155"
         android:textSize="15sp"
         android:gravity="center"
-        android:padding="32dp"
+        android:padding="40dp"
         android:visibility="gone"/>
 
-    <!-- ── Bus list — fills ALL remaining space ───────────────── -->
+    <!-- ── Bus list ────────────────────────────────────────────── -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/busRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
         android:clipToPadding="false"/>
 
 </LinearLayout>
