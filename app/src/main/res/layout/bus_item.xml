@@ -12,57 +12,54 @@
     android:clickable="true"
     android:focusable="true">
 
-    <!-- Left violet accent bar -->
+    <!-- Left accent bar -->
     <View
         android:layout_width="3dp"
-        android:layout_height="56dp"
+        android:layout_height="52dp"
         android:background="@drawable/accent_bar"
         android:layout_marginEnd="14dp"/>
 
-    <!-- Bus icon -->
+    <!-- Bus icon circle -->
     <TextView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
         android:text="🚌"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:gravity="center"
         android:background="@drawable/bus_icon_bg"
         android:layout_marginEnd="14dp"/>
 
-    <!-- Text content -->
+    <!-- Text info -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <!-- Bus title -->
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
+            android:textColor="#F1F5F9"
             android:maxLines="1"
             android:ellipsize="end"/>
 
-        <!-- Bus ID badge -->
         <TextView
             android:id="@+id/busId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="11sp"
-            android:textColor="#71717A"
+            android:textColor="#475569"
             android:layout_marginTop="3dp"/>
 
-        <!-- Departure row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="7dp">
+            android:layout_marginTop="6dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,31 +72,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="#8B5CF6"
+                android:textColor="#0EA5E9"
                 android:textStyle="bold"/>
 
         </LinearLayout>
 
-        <!-- Stop info -->
         <TextView
             android:id="@+id/stopTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:textColor="#52525B"
-            android:layout_marginTop="4dp"
+            android:textColor="#475569"
+            android:layout_marginTop="3dp"
             android:maxLines="1"
             android:ellipsize="end"/>
 
     </LinearLayout>
 
-    <!-- Chevron arrow -->
+    <!-- Arrow chevron -->
     <TextView
-        android:layout_width="24dp"
-        android:layout_height="wrap_content"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:text="›"
-        android:textSize="24sp"
-        android:textColor="#3F3F46"
+        android:textSize="22sp"
+        android:textColor="#0EA5E9"
         android:gravity="center"/>
 
 </LinearLayout>

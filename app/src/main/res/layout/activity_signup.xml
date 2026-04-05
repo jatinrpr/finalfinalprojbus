@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0F0F">
+    android:background="#080E1C">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,22 +13,21 @@
         android:paddingTop="64dp"
         android:paddingBottom="40dp">
 
-        <!-- Icon -->
+        <!-- Icon + Title -->
         <TextView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:text="✨"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:gravity="center"
             android:background="@drawable/card_bg"
-            android:layout_marginBottom="28dp"/>
+            android:layout_marginBottom="24dp"/>
 
-        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Account"
-            android:textColor="#FFFFFF"
+            android:textColor="#F1F5F9"
             android:textSize="28sp"
             android:textStyle="bold"/>
 
@@ -36,18 +35,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Join IIT Ropar Bus Tracker"
-            android:textColor="#71717A"
+            android:textColor="#64748B"
             android:textSize="15sp"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="44dp"/>
+            android:layout_marginBottom="40dp"/>
 
         <!-- Full Name -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Full Name"
-            android:textColor="#A1A1AA"
-            android:textSize="13sp"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:letterSpacing="0.08"
             android:layout_marginBottom="8dp"/>
 
         <EditText
@@ -55,8 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:hint="Your full name"
-            android:textColorHint="#3F3F46"
-            android:textColor="#FFFFFF"
+            android:textColorHint="#334155"
+            android:textColor="#F1F5F9"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
             android:paddingStart="18dp"
@@ -69,8 +69,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gmail Address"
-            android:textColor="#A1A1AA"
-            android:textSize="13sp"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:letterSpacing="0.08"
             android:layout_marginBottom="8dp"/>
 
         <EditText
@@ -78,8 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:hint="name@gmail.com"
-            android:textColorHint="#3F3F46"
-            android:textColor="#FFFFFF"
+            android:textColorHint="#334155"
+            android:textColor="#F1F5F9"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
             android:paddingStart="18dp"
@@ -92,8 +93,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password"
-            android:textColor="#A1A1AA"
-            android:textSize="13sp"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:letterSpacing="0.08"
             android:layout_marginBottom="8dp"/>
 
         <EditText
@@ -101,8 +103,8 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:hint="Minimum 6 characters"
-            android:textColorHint="#3F3F46"
-            android:textColor="#FFFFFF"
+            android:textColorHint="#334155"
+            android:textColor="#F1F5F9"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
             android:paddingStart="18dp"
@@ -115,8 +117,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirm Password"
-            android:textColor="#A1A1AA"
-            android:textSize="13sp"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:letterSpacing="0.08"
             android:layout_marginBottom="8dp"/>
 
         <EditText
@@ -124,14 +127,14 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:hint="Re-enter password"
-            android:textColorHint="#3F3F46"
-            android:textColor="#FFFFFF"
+            android:textColorHint="#334155"
+            android:textColor="#F1F5F9"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
             android:paddingStart="18dp"
             android:paddingEnd="18dp"
             android:inputType="textPassword"
-            android:layout_marginBottom="36dp"/>
+            android:layout_marginBottom="32dp"/>
 
         <!-- Loading -->
         <ProgressBar
@@ -142,7 +145,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Signup button -->
+        <!-- Create Account Button -->
         <Button
             android:id="@+id/signupBtn"
             android:layout_width="match_parent"
@@ -155,12 +158,13 @@
             android:stateListAnimator="@null"
             android:elevation="0dp"/>
 
+        <!-- Already have account -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Already have an account? Sign In"
-            android:textColor="#3F3F46"
-            android:textSize="13sp"
+            android:textColor="#475569"
+            android:textSize="14sp"
             android:gravity="center"
             android:layout_marginTop="24dp"/>
 
