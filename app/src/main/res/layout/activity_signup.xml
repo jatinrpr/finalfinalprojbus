@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080E1C">
+    android:background="#F9FAFB">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,29 +13,20 @@
         android:paddingTop="64dp"
         android:paddingBottom="40dp">
 
-        <!-- Icon + Title -->
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="✨"
-            android:textSize="28sp"
-            android:gravity="center"
-            android:background="@drawable/card_bg"
-            android:layout_marginBottom="24dp"/>
-
+        <!-- Title — no emoji, just clean text -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Account"
-            android:textColor="#F1F5F9"
-            android:textSize="28sp"
+            android:textColor="#111827"
+            android:textSize="30sp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Join IIT Ropar Bus Tracker"
-            android:textColor="#64748B"
+            android:textColor="#6B7280"
             android:textSize="15sp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="40dp"/>
@@ -45,22 +36,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Full Name"
-            android:textColor="#94A3B8"
-            android:textSize="12sp"
-            android:letterSpacing="0.08"
+            android:textColor="#374151"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="52dp"
             android:hint="Your full name"
-            android:textColorHint="#334155"
-            android:textColor="#F1F5F9"
+            android:textColorHint="#9CA3AF"
+            android:textColor="#111827"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:inputType="textPersonName"
             android:layout_marginBottom="20dp"/>
 
@@ -69,22 +60,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gmail Address"
-            android:textColor="#94A3B8"
-            android:textSize="12sp"
-            android:letterSpacing="0.08"
+            android:textColor="#374151"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="52dp"
             android:hint="name@gmail.com"
-            android:textColorHint="#334155"
-            android:textColor="#F1F5F9"
+            android:textColorHint="#9CA3AF"
+            android:textColor="#111827"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="20dp"/>
 
@@ -93,22 +84,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password"
-            android:textColor="#94A3B8"
-            android:textSize="12sp"
-            android:letterSpacing="0.08"
+            android:textColor="#374151"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="52dp"
             android:hint="Minimum 6 characters"
-            android:textColorHint="#334155"
-            android:textColor="#F1F5F9"
+            android:textColorHint="#9CA3AF"
+            android:textColor="#111827"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:inputType="textPassword"
             android:layout_marginBottom="20dp"/>
 
@@ -117,22 +108,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirm Password"
-            android:textColor="#94A3B8"
-            android:textSize="12sp"
-            android:letterSpacing="0.08"
+            android:textColor="#374151"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:hint="Re-enter password"
-            android:textColorHint="#334155"
-            android:textColor="#F1F5F9"
+            android:layout_height="52dp"
+            android:hint="Re-enter your password"
+            android:textColorHint="#9CA3AF"
+            android:textColor="#111827"
             android:textSize="15sp"
             android:background="@drawable/input_bg"
-            android:paddingStart="18dp"
-            android:paddingEnd="18dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:inputType="textPassword"
             android:layout_marginBottom="32dp"/>
 
@@ -145,11 +136,11 @@
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Create Account Button -->
+        <!-- Create Account button -->
         <Button
             android:id="@+id/signupBtn"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="54dp"
             android:text="Create Account"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
@@ -158,15 +149,14 @@
             android:stateListAnimator="@null"
             android:elevation="0dp"/>
 
-        <!-- Already have account -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Already have an account? Sign In"
-            android:textColor="#475569"
+            android:textColor="#9CA3AF"
             android:textSize="14sp"
             android:gravity="center"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 </ScrollView>

@@ -10,16 +10,17 @@
     android:padding="16dp"
     android:gravity="center_vertical"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:elevation="2dp">
 
-    <!-- Left accent bar -->
+    <!-- Violet accent bar on left -->
     <View
         android:layout_width="3dp"
-        android:layout_height="52dp"
+        android:layout_height="54dp"
         android:background="@drawable/accent_bar"
         android:layout_marginEnd="14dp"/>
 
-    <!-- Bus icon circle -->
+    <!-- Bus icon in light purple circle -->
     <TextView
         android:layout_width="46dp"
         android:layout_height="46dp"
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="#F1F5F9"
+            android:textColor="#111827"
             android:maxLines="1"
             android:ellipsize="end"/>
 
@@ -51,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="11sp"
-            android:textColor="#475569"
+            android:textColor="#9CA3AF"
             android:layout_marginTop="3dp"/>
 
         <LinearLayout
@@ -62,17 +63,11 @@
             android:layout_marginTop="6dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🕐 "
-                android:textSize="11sp"/>
-
-            <TextView
                 android:id="@+id/departure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:textColor="#0EA5E9"
+                android:textColor="#7C3AED"
                 android:textStyle="bold"/>
 
         </LinearLayout>
@@ -82,20 +77,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:textColor="#475569"
+            android:textColor="#6B7280"
             android:layout_marginTop="3dp"
             android:maxLines="1"
             android:ellipsize="end"/>
 
     </LinearLayout>
 
-    <!-- Arrow chevron -->
+    <!-- Arrow -->
     <TextView
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
         android:text="›"
-        android:textSize="22sp"
-        android:textColor="#0EA5E9"
+        android:textSize="24sp"
+        android:textColor="#D1D5DB"
         android:gravity="center"/>
 
 </LinearLayout>

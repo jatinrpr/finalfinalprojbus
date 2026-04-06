@@ -3,133 +3,97 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080E1C">
+    android:background="#FFFFFF">
 
-    <!-- Top accent glow -->
-    <View
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-100dp"
-        android:background="@drawable/glow_circle"
-        android:alpha="0.25"/>
-
-    <!-- Logo area -->
+    <!-- Center logo -->
     <LinearLayout
-        android:id="@+id/logoArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginTop="100dp">
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="200dp">
 
-        <!-- Bus emoji in circle -->
-        <TextView
+        <ImageView
+            android:id="@+id/busImage"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:text="🚌"
-            android:textSize="40sp"
-            android:gravity="center"
-            android:background="@drawable/circle_blue"
+            android:src="@android:drawable/ic_menu_compass"
             android:layout_gravity="center"
-            android:elevation="8dp"/>
+            android:layout_marginBottom="28dp"
+            android:alpha="0"/>
 
         <TextView
-            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Smart Bus Tracker"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="#F1F5F9"
-            android:layout_marginTop="20dp"
-            android:letterSpacing="0.02"/>
+            android:textColor="#111827"
+            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IIT Ropar"
-            android:textSize="14sp"
-            android:textColor="#0EA5E9"
-            android:letterSpacing="0.1"
-            android:layout_marginTop="4dp"/>
+            android:textSize="15sp"
+            android:textColor="#6B7280"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"/>
 
     </LinearLayout>
 
-    <!-- Animated bus image -->
-    <ImageView
-        android:id="@+id/busImage"
-        android:src="@android:drawable/ic_menu_compass"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:alpha="0"/>
-
-    <!-- Bottom card with buttons -->
+    <!-- Buttons at bottom -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="52dp"
         android:paddingStart="28dp"
         android:paddingEnd="28dp">
 
-        <!-- Label -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Who are you?"
-            android:textColor="#64748B"
-            android:textSize="13sp"
-            android:letterSpacing="0.1"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- Student Button -->
         <Button
             android:id="@+id/studentBtn"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="🎓  I'm a Student"
+            android:layout_height="54dp"
+            android:text="I'm a Student"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
             android:background="@drawable/btn_primary"
             android:stateListAnimator="@null"
-            android:alpha="0"
-            android:elevation="0dp"/>
+            android:elevation="0dp"
+            android:alpha="0"/>
 
         <View android:layout_width="0dp" android:layout_height="12dp"/>
 
-        <!-- Driver Button -->
         <Button
             android:id="@+id/driverBtn"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="🚌  I'm a Driver"
-            android:textColor="#0EA5E9"
+            android:layout_height="54dp"
+            android:text="I'm a Driver"
+            android:textColor="#7C3AED"
             android:textSize="16sp"
             android:textStyle="bold"
             android:background="@drawable/btn_outline"
             android:stateListAnimator="@null"
-            android:alpha="0"
-            android:elevation="0dp"/>
+            android:elevation="0dp"
+            android:alpha="0"/>
 
-        <View android:layout_width="0dp" android:layout_height="12dp"/>
+        <View android:layout_width="0dp" android:layout_height="8dp"/>
 
-        <!-- Calendar Button -->
         <Button
             android:id="@+id/btnCalendar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="📄  Bus Schedule PDF"
-            android:textColor="#64748B"
-            android:textSize="14sp"
+            android:layout_height="44dp"
+            android:text="View Bus Schedule PDF"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
             android:background="@android:color/transparent"
             android:stateListAnimator="@null"
-            android:alpha="0"
-            android:elevation="0dp"/>
+            android:elevation="0dp"
+            android:alpha="0"/>
 
     </LinearLayout>
 
