@@ -79,6 +79,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         if (tvBusTitle != null)
             tvBusTitle.setText(busTitle != null ? busTitle : "Bus");
 
+        // Show Bella Chowk direction status if applicable
+        updateBellaChowkStatus();
+
         if (btnBack != null)
             btnBack.setOnClickListener(v -> finish());
 
@@ -236,6 +239,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                             animateMarker(new LatLng(lat, lng));
                             drawPolyline();
                             fetchETA(lat, lng);
+                            updateBellaChowkStatus();   // refresh on every location update
                         });
                     }
 
@@ -369,6 +373,53 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         } else {
             routePolyline.setPoints(routePoints);
         }
+    }
+
+    // ── Bella Chowk direction status ──────────────────────────────
+    /**
+     * If this bus has a "Bella Chowk" stop, updates tvBusTitle to show:
+     *   "Bus Title\n🚌 On the way to Bella Chowk"   — before scheduled arrival
+     *   "Bus Title\n🔄 Returning from Bella Chowk"  — after scheduled arrival
+     */
+    private void updateBellaChowkStatus() {
+        String status = getBellaChowkStatus();
+        if (tvBusTitle == null) return;
+        String title = (busTitle != null ? busTitle : "Bus");
+        tvBusTitle.setText(status != null ? title + "\n" + status : title);
+    }
+
+    private String getBellaChowkStatus() {
+        for (int i = 0; i < stopNames.size(); i++) {
+            String name = stopNames.get(i).toLowerCase().trim();
+            if (name.contains("bella") &&
+                    (name.contains("chowk") || name.contains("chauk") || name.contains("chawk"))) {
+                if (i >= stopTimes.size()) break;
+                try {
+                    int stopMin = parseTimeToMinutes(stopTimes.get(i));
+                    java.util.Calendar now = java.util.Calendar.getInstance();
+                    int nowMin = now.get(java.util.Calendar.HOUR_OF_DAY) * 60
+                            + now.get(java.util.Calendar.MINUTE);
+                    return (nowMin < stopMin)
+                            ? "🚌 On the way to Bella Chowk"
+                            : "🔄 Returning from Bella Chowk";
+                } catch (Exception ignored) {}
+                break;
+            }
+        }
+        return null;   // bus has no Bella Chowk stop — show nothing extra
+    }
+
+    private int parseTimeToMinutes(String timeStr) {
+        timeStr = timeStr.trim().toUpperCase();
+        boolean isPM = timeStr.contains("PM");
+        boolean isAM = timeStr.contains("AM");
+        timeStr = timeStr.replace("AM", "").replace("PM", "").trim();
+        String[] parts = timeStr.split(":");
+        int hour = Integer.parseInt(parts[0].trim());
+        int min  = Integer.parseInt(parts[1].trim());
+        if (isPM && hour != 12) hour += 12;
+        if (isAM && hour == 12) hour = 0;
+        return hour * 60 + min;
     }
 
     // ── Helpers ───────────────────────────────────────────────────

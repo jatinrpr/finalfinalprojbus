@@ -8,6 +8,7 @@ import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class BusAdapter extends RecyclerView.Adapter<BusAdapter.ViewHolder> {
@@ -47,7 +48,12 @@ public class BusAdapter extends RecyclerView.Adapter<BusAdapter.ViewHolder> {
         holder.title.setText(bus.title);
         if (holder.busId != null) holder.busId.setText(bus.busId);
         holder.departure.setText("🕐 Departure: " + bus.departure);
-        holder.stopTime.setText("📍 " + bus.stopName + "  " + bus.stopTime);
+
+        // Show Bella Chowk status if this bus has that stop
+        String bellaStatus = getBellaChowkStatus(bus);
+        String stopLine = "📍 " + bus.stopName + "  " + bus.stopTime;
+        if (bellaStatus != null) stopLine += "\n" + bellaStatus;
+        holder.stopTime.setText(stopLine);
 
         // Tap → open MapActivity with all stop data
         holder.itemView.setOnClickListener(v -> {
@@ -66,4 +72,42 @@ public class BusAdapter extends RecyclerView.Adapter<BusAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() { return list.size(); }
+
+    // ── Bella Chowk status helper ─────────────────────────────────────
+    /**
+     * Returns "🚌 On the way to Bella Chowk" or "🔄 Returning from Bella Chowk"
+     * if this bus has a Bella Chowk stop, or null if it doesn't.
+     */
+    private static String getBellaChowkStatus(BusModel bus) {
+        for (int i = 0; i < bus.stopNames.size(); i++) {
+            String name = bus.stopNames.get(i).toLowerCase().trim();
+            if (name.contains("bella") &&
+                    (name.contains("chowk") || name.contains("chauk") || name.contains("chawk"))) {
+                if (i >= bus.stopTimes.size()) break;
+                try {
+                    int stopMin = parseTimeToMinutes(bus.stopTimes.get(i));
+                    Calendar now = Calendar.getInstance();
+                    int nowMin = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE);
+                    return (nowMin < stopMin)
+                            ? "🚌 On the way to Bella Chowk"
+                            : "🔄 Returning from Bella Chowk";
+                } catch (Exception ignored) {}
+                break;
+            }
+        }
+        return null;
+    }
+
+    private static int parseTimeToMinutes(String timeStr) {
+        timeStr = timeStr.trim().toUpperCase();
+        boolean isPM = timeStr.contains("PM");
+        boolean isAM = timeStr.contains("AM");
+        timeStr = timeStr.replace("AM", "").replace("PM", "").trim();
+        String[] parts = timeStr.split(":");
+        int hour = Integer.parseInt(parts[0].trim());
+        int min  = Integer.parseInt(parts[1].trim());
+        if (isPM && hour != 12) hour += 12;
+        if (isAM && hour == 12) hour = 0;
+        return hour * 60 + min;
+    }
 }
