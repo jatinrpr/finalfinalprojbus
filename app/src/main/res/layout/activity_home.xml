@@ -50,6 +50,7 @@
             android:textSize="12sp"
             android:textColor="#FFFFFF"
             android:background="@drawable/btn_danger"
+            android:backgroundTint="@null"
             android:stateListAnimator="@null"
             android:elevation="0dp"
             android:paddingStart="0dp"

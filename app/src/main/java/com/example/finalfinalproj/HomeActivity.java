@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private Spinner        daySpinner;
     private BusAdapter     adapter;
     private ProgressBar    progressBar;
-    private TextView       tvEmpty;
+    private View           tvEmpty;
     private final List<BusModel> list = new ArrayList<>();
 
     private static final String[] DAY_LABELS = {"Mon-Thu", "Friday", "Saturday", "Sunday"};
@@ -152,7 +152,6 @@ public class HomeActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     setLoading(false);
                     if (tvEmpty != null) {
-                        tvEmpty.setText("❌ Could not load buses.\nCheck server is running.");
                         tvEmpty.setVisibility(View.VISIBLE);
                     }
                     Toast.makeText(this, "Server error: " + e.getMessage(),
