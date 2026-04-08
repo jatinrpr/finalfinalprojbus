@@ -139,7 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:text="Create Account"
-            android:textColor="#7C3AED"
+            android:textColor="#9CA3AF"
             android:textSize="15sp"
             android:textStyle="bold"
             android:gravity="center"
