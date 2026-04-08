@@ -10,7 +10,7 @@
         android:allowBackup="true"
         android:label="Bus Tracker"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:theme="@style/Theme.Finalfinalproj"
         android:usesCleartextTraffic="true">
         <service
             android:name=".MyFirebaseMessagingService"
