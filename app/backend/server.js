@@ -12,10 +12,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const JWT_SECRET  = process.env.JWT_SECRET  || 'iitropar@BusTrack#2024$SecureKey!XyZ';
-const MONGO_URI   = process.env.MONGO_URI   || 'mongodb://localhost:27017/bustrack';
-const DRIVER_PASS = process.env.DRIVER_PASS || 'driver123';
-const PORT        = process.env.PORT        || 3000;
+const JWT_SECRET  = process.env.JWT_SECRET ;
+const MONGO_URI   = process.env.MONGO_URI  ;
+const DRIVER_PASS = process.env.DRIVER_PASS ;
+const PORT        = process.env.PORT   ;
 
 const SHARING_TIMEOUT_MS = 2 * 60 * 60 * 1000;
 
